@@ -1,0 +1,58 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+    <div class="container-fluid">
+    {% include 'accounts/status.html' %}
+        <br>
+        <div class="row">
+            <div class="col-md-5">
+                <h5>CUSTOMERS:</h5>
+                <hr>
+                <div class="card card-body">
+                    <a class="btn btn-primary btn-sm btn-block" href="#">New Customer</a>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Customer</th>
+                            <th scope="col">Orders</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <h5>LAST 5 ORDERS</h5>
+                <hr>
+                <div class="card card-body">
+                    <a class="btn btn-primary btn-sm btn-block" href="#">New Order</a>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col">Date Ordered</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Update</th>
+                            <th scope="col">Remove</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Mouse</td>
+                            <td>24/08/2020</td>
+                            <td>sealed</td>
+                            <td><a href="#" class="btn btn-light btn-sm">Update</a></td>
+                            <td><a href="#" class="btn btn-danger btn-sm">Remove</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
