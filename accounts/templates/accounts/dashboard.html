@@ -13,14 +13,16 @@
                         <thead>
                         <tr>
                             <th scope="col">Customer</th>
-                            <th scope="col">Orders</th>
+                            <th scope="col">Last Order Date</th>
                         </tr>
                         </thead>
                         <tbody>
+                        {% for customer in customers %}
                         <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
+                            <td>{{ customer }}</td>
+                            <td>{{ customer.order_set.last.date_created }}</td>
                         </tr>
+                        {% endfor %}
                         </tbody>
                     </table>
                 </div>
@@ -42,13 +44,15 @@
                         </tr>
                         </thead>
                         <tbody>
+                        {% for order in orders %}
                         <tr>
-                            <td>Mouse</td>
-                            <td>24/08/2020</td>
-                            <td>sealed</td>
+                            <td>{{ order.product }}</td>
+                            <td>{{ order.date_created }}</td>
+                            <td>{{ order.status }}</td>
                             <td><a href="#" class="btn btn-light btn-sm">Update</a></td>
                             <td><a href="#" class="btn btn-danger btn-sm">Remove</a></td>
                         </tr>
+                        {% endfor %}
                         </tbody>
                     </table>
                 </div>

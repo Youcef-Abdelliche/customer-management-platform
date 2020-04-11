@@ -1,9 +1,15 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import *
 
 
 def home(request):
-    return render(request, 'accounts/dashboard.html')
+    customers = Customer.objects.all().order_by("-date_created")
+    orders = Order.objects.all().order_by("-date_created")
+    orders_delivered = Order.objects.filter(status="Delivered")
+    orders_pending = Order.objects.filter(status="Pending")
+    context = {'customers': customers, 'orders': orders, 'orders_delivered': orders_delivered,
+               'orders_pending': orders_pending}
+    return render(request, 'accounts/dashboard.html', context)
 
 
 def products(request):
