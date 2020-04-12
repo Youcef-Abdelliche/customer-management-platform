@@ -24,11 +24,13 @@
                     </tr>
                     </thead>
                     <tbody>
+                    {% for product in products %}
                     <tr>
-                        <td>Mouse</td>
-                        <td>Tech</td>
-                        <td>500 DA</td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.category }}</td>
+                        <td>{{ product.price }} DA</td>
                     </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>

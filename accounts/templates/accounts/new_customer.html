@@ -2,31 +2,31 @@
 
 {% block content %}
     <div class="container">
-        <h2>Update Customer</h2>
+    <h2>New Customer</h2>
         <hr>
-        <form action="{% url 'update_customer' customer.id %}" method="post">
+        <form action="{% url 'new_customer' %}" method="post">
             {% csrf_token %}
             <div class="form-group row">
                 <label for="username" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="username" name="customerName" value="{{ customer.name }}" required>
+                    <input type="text" class="form-control" id="username" name="customerName" required>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail3" name="customerEmail" value="{{ customer.email }}" required>
+                    <input type="email" class="form-control" id="inputEmail3" name="customerEmail" required>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="phone" class="col-sm-2 col-form-label">Phone</label>
                 <div class="col-sm-2">
-                    <input type="tel" class="form-control" id="phone" name="customerPhone" value="{{ customer.phone }}" required>
+                    <input type="tel" class="form-control" id="phone" name="customerPhone" required>
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary">Update Customer</button>
+                    <button type="submit" class="btn btn-primary">Add Customer</button>
                 </div>
             </div>
         </form>

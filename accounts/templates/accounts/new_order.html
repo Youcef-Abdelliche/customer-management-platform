@@ -1,0 +1,34 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+    <div class="container">
+        <form action="{% url 'new_order' %}" method="get">
+            <div class="form-group">Select customer</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="order_customer">
+                    {% for customer in customers %}
+                        <option value="{{ customer.name }}">{{ customer.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Select order status</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="order_status">
+                    <option value="Pending">Pending</option>
+                    <option value="Out of delivery" name="order_status">Out of delivery</option>
+                    <option value="Delivered" name="order_status">Delivered</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Select product</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="order_product">
+                    {% for product in products %}
+                        <option value="{{ product.name }}">{{ product.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        <button class="btn btn-primary" type="submit">Add Order</button>
+        </form>
+    </div>
+{% endblock %}

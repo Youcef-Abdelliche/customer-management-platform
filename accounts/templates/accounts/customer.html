@@ -1,8 +1,108 @@
 {% extends 'accounts/main.html' %}
 {% block content %}
     <div class="container-fluid">
-        {% include 'accounts/customerInfo.html' %}
-
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        Customer:
+                    </div>
+                    <div class="card-body">
+                        <a href="{% url 'update' customer.id %}"
+                           class="btn btn-outline-info btn-sm btn-block">Update Customer</a>
+                        <button type="button" class="btn btn-outline-danger btn-sm btn-block" data-toggle="modal"
+                                data-target="#exampleModal">
+                            Delete customer
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        Customer Information:
+                    </div>
+                    <div class="card-body">
+                        <h6>Name: {{ customer }}</h6>
+                        <h6>Email: {{ customer.email }}</h6>
+                        <h6>Phone: {{ customer.phone }}</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        Total Orders
+                    </div>
+                    <div class="card-body" align="center">
+                        <h1>{{ orders.count }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <form>
+            <div class="form-group">
+                <label>Search:</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        <hr>
+        <div class="card">
+            <div class="card-header">
+                <h4>Orders</h4>
+            </div>
+            <div class="card card-body">
+                <a class="btn btn-primary btn-sm btn-block" href="#">New Order</a>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Date Ordered</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Remove</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for order in orders %}
+                        <tr>
+                            <td>{{ order }}</td>
+                            <td>{{ order.product.category }}</td>
+                            <td>{{ order.date_created }}</td>
+                            <td>{{ order.status }}</td>
+                            <td><a href="#" class="btn btn-outline-info btn-sm">Update</a></td>
+                            <td><a href="#" class="btn btn-outline-danger btn-sm">Remove</a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Delete Customer</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure to delete the customer: {{ customer.name }}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <a href="{% url 'delete' customer.id %}"
+                           class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock content %}
 
