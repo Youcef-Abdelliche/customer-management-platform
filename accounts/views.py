@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect
 
 
 def home(request):
-    customers = Customer.objects.all().order_by("date_created")
+    customers = Customer.objects.all().order_by("date_created")[0:5]
     orders = Order.objects.all().order_by("-date_created")
     last5_order = orders[0:5]
     orders_delivered = Order.objects.filter(status="Delivered")
@@ -69,14 +69,13 @@ def new_customer_view(request):
 
 
 def new_customer(request):
-
     customer_name = request.POST.get('customerName')
     customer_email = request.POST.get('customerEmail')
     customer_phone = request.POST.get('customerPhone')
 
     Customer.objects.create(name=customer_name, email=customer_email, phone=customer_phone)
 
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/all_customer')
 
 
 def new_order_view(request):
@@ -89,10 +88,32 @@ def new_order_view(request):
 
 
 def new_order(request):
-
     order_customer = Customer.objects.get(name=request.GET.get('order_customer'))
     order_product = Product.objects.get(name=request.GET.get('order_product'))
     order_status = request.GET.get('order_status')
 
     Order.objects.create(customer=order_customer, product=order_product, status=order_status)
     return HttpResponseRedirect('/')
+
+
+def new_product(request):
+    if request.method == 'POST':
+        tag1 = Tag.objects.get(id=1)
+        tag2 = Tag.objects.get(id=2)
+        description = "Description for the product"
+        product_name = request.POST.get('product_name')
+        product_price = request.POST.get('product_price')
+        product_category = request.POST.get('category')
+        print("PRODUCT TAG IS: ", product_category)
+        product = Product.objects.create(name=product_name, price=product_price, category=product_category,
+                                         description=description)
+        tag1.products.add(product)
+        tag2.products.add(product)
+        return HttpResponseRedirect('/')
+    return render(request, 'accounts/new_product.html')
+
+
+def customers_list(request):
+    customers = Customer.objects.all().order_by("date_created")
+    context = {'customers': customers}
+    return render(request, 'accounts/customers.html', context)

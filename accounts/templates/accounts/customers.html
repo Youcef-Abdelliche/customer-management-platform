@@ -1,0 +1,43 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+    <div class="container-fluid">
+
+        <form>
+            <div class="form-group">
+                <label>Search Customers by name:</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    <hr>
+        <h5>CUSTOMERS:</h5>
+        <hr>
+        <a class="btn btn-primary btn-sm btn-block" href="{% url 'new_customer_view' %}">New Customer</a>
+        <hr>
+        <div class="card card-body">
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for customer in customers %}
+                    <tr>
+                        <td><a href="{% url 'customer' customer.id %}">{{ customer }}</a></td>
+                        <td>{{ customer.email }}</td>
+                        <td>{{ customer.phone }}</td>
+                        <td><a href="{% url 'update' customer.id %}" class="btn btn-light btn-sm">Update</a></td>
+                        <td><a href="{% url 'delete' customer.id %}" class="btn btn-danger btn-sm">Remove</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock content %}

@@ -10,6 +10,8 @@
                     <div class="card-body">
                         <a href="{% url 'update' customer.id %}"
                            class="btn btn-outline-info btn-sm btn-block">Update Customer</a>
+                        <a href="#"
+                           class="btn btn-outline-info btn-sm btn-block">Create Order</a>
                         <button type="button" class="btn btn-outline-danger btn-sm btn-block" data-toggle="modal"
                                 data-target="#exampleModal">
                             Delete customer
@@ -54,7 +56,6 @@
                 <h4>Orders</h4>
             </div>
             <div class="card card-body">
-                <a class="btn btn-primary btn-sm btn-block" href="#">New Order</a>
                 <table class="table">
                     <thead>
                     <tr>
@@ -93,7 +94,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Are you sure to delete the customer: {{ customer.name }}
+                        Are you sure you want to delete the customer: {{ customer.name }}
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

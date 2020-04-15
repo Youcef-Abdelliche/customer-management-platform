@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4b67db50-835d-40dc-a07a-38c77894c0ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/customer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/customerInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/customerInfo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/new_order.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/new_order.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/products.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
@@ -92,7 +92,9 @@
       <workItem from="1586690433470" duration="3104000" />
       <workItem from="1586699607522" duration="2986000" />
       <workItem from="1586702610100" duration="1097000" />
-      <workItem from="1586719858849" duration="6878000" />
+      <workItem from="1586719858849" duration="9965000" />
+      <workItem from="1586840961259" duration="5659000" />
+      <workItem from="1586930421064" duration="3226000" />
     </task>
     <servers />
   </component>
@@ -100,10 +102,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1586719858913">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1586841008233">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1586719858913" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.834@0.0.1536.834" timestamp="1586841008233" />
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1586930424407">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1586930424407" />
     <state x="408" y="32" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586578695766">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

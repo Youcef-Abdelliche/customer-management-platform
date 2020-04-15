@@ -5,10 +5,10 @@
         <br>
         <div class="row">
             <div class="col-md-5">
-                <h5>CUSTOMERS:</h5>
+                <h5>LAST 5 CUSTOMERS:</h5>
                 <hr>
                 <div class="card card-body">
-                    <a class="btn btn-primary btn-sm btn-block" href="{% url 'new_customer_view' %}">New Customer</a>
+
                     <table class="table">
                         <thead>
                         <tr>
@@ -25,7 +25,10 @@
                         {% endfor %}
                         </tbody>
                     </table>
-                    <a href="#" align="center">see all customers</a>
+
+                    <a href="{% url 'customers_list' %}" align="center">see all customers</a>
+                    <hr>
+                    <a class="btn btn-primary btn-sm btn-block" href="{% url 'new_customer_view' %}">New Customer</a>
                 </div>
             </div>
 
@@ -33,8 +36,7 @@
                 <h5>LAST 5 ORDERS</h5>
                 <hr>
                 <div class="card card-body">
-                    <a class="btn btn-primary btn-sm btn-block" href="{% url 'new_order_view' %}">New Order</a>
-                    <hr>
+
                     <table class="table">
                         <thead>
                         <tr>
@@ -60,6 +62,8 @@
                         </tbody>
                     </table>
                     <a href="#" align="center">see all orders</a>
+                    <hr>
+                    <a class="btn btn-primary btn-sm btn-block" href="{% url 'new_order_view' %}">New Order</a>
                 </div>
             </div>
         </div>
